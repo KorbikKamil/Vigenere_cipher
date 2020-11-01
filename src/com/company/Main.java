@@ -18,17 +18,17 @@ public class Main {
                                                         'V', 'W', 'X', 'Y', 'Z', '_'};
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Podaj tekst (w alfabecie angielskim + '_') do zaszyfrowania:");
+        System.out.println("Enter your text (in the English alphabet + '_') to be encypted:");
         String input = inputWithValidation();
-        System.out.println("Podaj klucz szyfrujący (w alfabecie angielskim + '_'):");
+        System.out.println("Enter your encryption key (in the English alphabet + '_'):");
         String key = inputWithValidation();
-        System.out.println("Szyfr: " + encryption(input, key));
+        System.out.println("Encrypted text: " + encryption(input, key));
 
-        System.out.println("Podaj zaszyfrowany tekst (w alfabecie angielskim + '_'):");
+        System.out.println("Enter your encrypted text (in the English alphabet + '_'):");
         String cipher = inputWithValidation();
-        System.out.println("Podaj klucz szyfrujący (w alfabecie angielskim + '_'):");
+        System.out.println("Enter your encryption key (in the English alphabet + '_'):");
         key = inputWithValidation();
-        System.out.println("Odszyfrowany tekst: " + decryption(cipher,key));
+        System.out.println("Decrypted text: " + decryption(cipher,key));
 
         String inputFromFile = readTextFromFile(INPUT_STRING_PATH);
         String keyFromFile = readKeyFromFile(INPUT_STRING_PATH);
@@ -57,7 +57,7 @@ public class Main {
             }
             if (isInAlphabet != text.length()) {
                 isInAlphabet = 0;
-                System.out.println("W tekscie znajduje się litera spoza alfabetu! Podaj ponownie:");
+                System.out.println("The text contains a letter that is not in the alphabet! Try again:");
             }
         }
         return text;
